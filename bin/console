@@ -1,0 +1,7 @@
+#!/usr/bin/env/ ruby
+
+require "bundler/setup"
+require "PALISADES_MALL_SCRAPING"
+
+require "irb"
+IRB.start(_FILE_)
