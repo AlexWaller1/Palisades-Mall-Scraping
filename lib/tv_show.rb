@@ -2,7 +2,7 @@
 #Will initialize instance variables of key tv show attributes
 #Will take in class variable @@all as an array
 
-class Store_Tracker
+class Tv_show
 
     attr_accessor :name_year, :positon, :description
 
@@ -27,15 +27,15 @@ class Store_Tracker
     end
 
     def name_year
-        @name_year || #scraped information
+        @name_year 
     end
 
     def position
-        @position || #scraped information
+        @position 
     end
 
     def description
-        @description || #scraped information
+        @description 
     end
 
     def doc

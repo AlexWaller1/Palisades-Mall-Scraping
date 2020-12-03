@@ -16,9 +16,9 @@ class CLI
     puts "What awesome Nickelodeon show would like to hear about?"
     input = gets.strip
 
-    tvshow = StoreTracker.find(input.to_i)
+    tvshow = Tv_show.find(input.to_i)
 
-    print_tvshow(tv_show)
+    print_tvshow(position)
 
     puts ""
     puts "Would you like to hear about another awesome show? Enter Y or N"
@@ -36,8 +36,17 @@ class CLI
     end
 end
 
-def print_tvshow(tvshow)
-    puts ""
+def print_tvshow
+    self.make_tvshow
+    Tv_show.all.each do |show|
+        if show.position && show.position != ""
+            puts "Ranking: #{show.position}"
+            puts "   Show and Year it Premiered: #{show.name_year}"
+            puts "   Description: #{show.description}"
+        end
+    end
+end
+    
 end
 
 

@@ -2,8 +2,8 @@
 #make sure to use Nokogiri here
 require 'nokogiri'
 require 'open-uri'
-r
-equire_relative './store_tracker.rb'
+
+require_relative './tv_show.rb'
 
 class Scraper
 
@@ -11,13 +11,16 @@ class Scraper
         Nokogiri::HTML(open(https://screenrant.com/nickelodeon-shows-2000s-best-ranked-imdb/))
     end
 
-    def scrape_tvshows_index
-        self.get_page.css("div[data-list='1-10'] a.item")
+    def get_shows
+        self.get_page.css(".post")
     end
 
     def make_tvshows
-        scrape_tvshows_index.each do |t|
-            StoreTracker.new_from_index_page(t)
+        self.get_shows.each do |post|
+            show = Tv_show.new
+            show.position = post.css("span").text
+            show.name_year = post.css("h2").text
+            show.description = post.css("p").text
         end
     end
 end
