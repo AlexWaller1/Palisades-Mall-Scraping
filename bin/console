@@ -1,7 +1,7 @@
 #!/usr/bin/env/ ruby
 
 require "bundler/setup"
-require "PALISADES_MALL_SCRAPING"
+require "nickelodeon_shows"
 
 require "irb"
 IRB.start(_FILE_)

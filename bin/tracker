@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-
-require_relative "../lib/palisades_mall_store_tracker.rb"
-
-PALISADESMALLSCRAPING::CLI.new.call
