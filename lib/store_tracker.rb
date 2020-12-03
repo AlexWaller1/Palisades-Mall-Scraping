@@ -4,18 +4,17 @@
 
 class Store_Tracker
 
-    attr_accessor :name_year, :positon, :description, :url
+    attr_accessor :name_year, :positon, :description
 
     @@all = []
 
     def self.new_from_index_page(t)
     end
 
-    def initialize(name_year=nil, position=nil, description=nil ,url)
+    def initialize(name_year=nil, position=nil, description=nil)
         @name_year = name_year
         @position = position
         @description = description
-        @url = url
         @@all << self
     end
 

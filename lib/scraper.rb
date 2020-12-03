@@ -1,5 +1,10 @@
 #Here is where we will scrape information from website
 #make sure to use Nokogiri here
+require 'nokogiri'
+require 'open-uri'
+r
+equire_relative './store_tracker.rb'
+
 class Scraper
 
     def get_page
