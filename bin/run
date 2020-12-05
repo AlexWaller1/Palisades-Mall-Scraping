@@ -2,4 +2,4 @@
 
 require_relative "../lib/nickelodeon_shows.rb"
 
-CLI.new.call
+NickelodeonShows::CLI.new.call
