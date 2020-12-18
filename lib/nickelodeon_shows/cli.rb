@@ -21,21 +21,28 @@ class NickelodeonShows::CLI
          
         input = gets.chomp.downcase
 
-        if input == "unshuffle"
+        if input == "unshuffle"   #if input.to_i, look up .between method
             self.unshuffle
         else
             puts "sorry, I didn't quite get that."
         end
     #end
     
+       puts "Please Enter Show Ranking to See Year it Premiered"
         
-        
-        
-        
-        
+        input = gets.chomp.to_i
 
-       
+        if input.between?(1,15)
 
+      show_year = self.print_year(input)
+
+       puts "Year it Premiered: #{show_year}"
+
+       else puts "Sorry, Please Enter a Number Between 1 and 15!"
+
+       end
+        
+        
         puts "Would you like to start the program again? Enter Y or N"
 
         input = gets.strip.downcase
@@ -55,7 +62,7 @@ def print_tvshow
         puts "Show: #{show.name}" 
         if show.position && show.position != ""
         #puts "Ranking: #{show.position}"
-        #puts "Year it premiered: #{show.year}"
+        puts "Year it premiered: #{show.year}"
        
     end
 
@@ -69,9 +76,12 @@ def unshuffle
         puts "Ranking: #{show.position}"
         end
     end
-#def print_out(n)
-  #puts "Name: #{NickelodeonShows::TvShows.all[n].name}"
-  #puts  "Ranking: #{NickelodeonShows::TvShows.all[n].position}"
+
+def print_year(position)
+    #binding.pry
+    show = NickelodeonShows::TvShow.all.find { |show| show.position == position.to_s }
+    show.year
+end
 end
 
 end
@@ -154,3 +164,36 @@ end
 #end
 #end
 #end
+
+#  def find_show_by_number
+#  user input
+
+#.find will return the first instance where block of code = true
+#.select will return all of the instances under that condition
+
+#self.find()
+# def method_1
+#   user_input
+#   variable_name = method_2(user_input) #should set a variable  =  to an object
+#  puts variable_name.name or .year or .position
+# end
+
+#def method_2(user_input)
+#  variable = TvShow.all.find {|show| show.position == user_input} #to_s or to_i
+# end
+
+#def method 1
+#input = gets.chomp
+#variable_name = TvShow.all.find {|show| show.position == user_input} #to_s or to_i
+# end
+
+#def print_year(position)
+    #NickelodeonShows::TvShow.all.find { |show| show.position == position }
+#end
+
+
+
+#def print_out(n)
+  #puts "Name: #{NickelodeonShows::TvShows.all[n].name}"
+  #puts  "Ranking: #{NickelodeonShows::TvShows.all[n].position}"
+
