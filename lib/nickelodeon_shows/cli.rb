@@ -41,6 +41,7 @@ class NickelodeonShows::CLI
 
        else puts "Sorry, Please Enter a Number Between 1 and 15!"
         start
+        
        end
         
         
@@ -54,7 +55,7 @@ class NickelodeonShows::CLI
             exit
         else
             puts "I don't understand that answer."
-            self.unshuffle 
+            start
             
         end
     end
