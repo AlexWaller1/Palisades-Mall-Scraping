@@ -25,6 +25,7 @@ class NickelodeonShows::CLI
             self.unshuffle
         else
             puts "sorry, I didn't quite get that."
+            start
         end
     #end
     
@@ -39,7 +40,7 @@ class NickelodeonShows::CLI
        puts "Year it Premiered: #{show_year}"
 
        else puts "Sorry, Please Enter a Number Between 1 and 15!"
-
+        start
        end
         
         
@@ -50,6 +51,7 @@ class NickelodeonShows::CLI
             start
         elsif input == "n"
             puts "Thank you! Have a great day!"
+            exit
         else
             puts "I don't understand that answer."
         end
@@ -62,7 +64,7 @@ def print_tvshow
         puts "Show: #{show.name}" 
         if show.position && show.position != ""
         #puts "Ranking: #{show.position}"
-        puts "Year it premiered: #{show.year}"
+        #puts "Year it premiered: #{show.year}"
        
     end
 
