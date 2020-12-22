@@ -65,9 +65,7 @@ def print_tvshow
     
     NickelodeonShows::TvShow.all.shuffle.each do |show|
         puts "Show: #{show.name}" 
-        if show.position && show.position != ""
         
-    end
 
 end
 end
