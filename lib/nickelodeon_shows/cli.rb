@@ -31,11 +31,13 @@ class NickelodeonShows::CLI
     
        puts "Please Enter Show Ranking to See Year it Premiered"
         
-        input = gets.chomp.to_i
+        input = gets.chomp
 
-        if input.between?(1,15)
+        if NickelodeonShows::TvShow.all.find { |show| show.name == input}
 
-      show_year = self.print_year(input)
+       # if input.between?(1,15)
+       show_year = self.find_by_name(input)
+      #show_year = self.print_year(input)
 
        puts "Year it Premiered: #{show_year}"
 
@@ -77,14 +79,19 @@ def unshuffle
         puts "Ranking: #{show.position}"
         end
     end
+end
 
 def print_year(position)
     
     show = NickelodeonShows::TvShow.all.find { |show| show.position == position.to_s }
     show.year
 end
+
+def find_by_name(name)
+    show = NickelodeonShows::TvShow.all.find { |show| show.name == name}
+    show.year
+end
 end
 
-end
 
-
+#def find by name, instead of choosing by ranking, they're choosing by name
